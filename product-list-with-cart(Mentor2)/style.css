@@ -1,15 +1,44 @@
+@font-face {
+    font-family: 'RedHatItalic';
+    src: url('./assets/fonts/RedHatText-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'RedHatRegular';
+    src: url('./assets/fonts/RedHatText-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'RedHatBold';
+    src: url('./assets/fonts/RedHatText-VariableFont_wght.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'RedHatAlmostBold';
+    src: url('./assets/fonts/RedHatText-VariableFont_wght.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
 *{
     margin: 0;
     padding: 0;
 }
 body{
+    font-family: 'RedHatRegular';
     margin:100px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     background-color: hsl(13, 31%, 94%);
 }
-
+.containerOrderProduct{
+    display: flex;
+    flex-direction: row;
+}
 .menu{
     display: flex;
     flex-direction: column;
@@ -17,19 +46,28 @@ body{
     height: auto;
 }
 
-.cart{
-    margin:0px 16px 0px 16px;
-    background-color: #fff;
-    flex: 1;
-    height: 50vh;
-}
+
 .menuHead{
     margin-bottom: 12px;
+    font-family: 'RedHatBold';
 }
 .menu-showMenu{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr  ;
-    gap: 10px 10px;
+    gap: 20px 20px;
+}
+.category{
+  
+    color:hsl(7, 20%, 60%,0.8);
+}
+.menuName{
+    font-family: 'RedHatAlmostBold';
+    font-size: 16px;
+    color: hsl(14, 65%, 9%,0.8);
+}
+.price{
+    color: hsl(14, 86%, 42%);
+    font-family: 'RedHatAlmostBold';
 }
 .pictureAndCart{
     display: flex;
@@ -45,24 +83,288 @@ body{
 img {
     width: 100%; /* Ensures the image fits the grid column width */
     object-fit: cover;
+    border-radius: 10px;
 }
-.add-tocart{
+.have-Incart{
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: hsl(14, 86%, 42%);
+    border-radius: 20px;
+    padding: 8px 15px; /* Adjust padding */
+    width: 50%;
+    position: relative;
+    top: -20px;
+    .quantity{
+        color: #fff;
+    }
+}
 
+
+div.iconIncart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+    padding: 4px;
+    border: #fff solid 1px;
+    border-radius: 50%;
+
+}
+div.iconIncart:hover{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#fff;
+    border: #fff solid 1px;
+    border-radius: 50%;
+    cursor: pointer;
+    svg path {
+        fill: hsl(14, 86%, 42%);
+    }
+}
+ 
+.add-tocart{
+    display: flex;
     background-color: #fff; /* White background */
-    border: 1px solid #ddd; /* Light gray border */
+    border: 1px solid hsl(14, 25%, 72%); /* Light gray border */
     border-radius: 20px; /* Rounded corners */
     padding: 8px 15px; /* Adjust padding */
     width: 50%;
-    text-align: center;
-
-    cursor: pointer; /* Pointer cursor on hover */
+justify-content: center;
+    font-weight: 700;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
     position: relative;
     top: -20px;
 }
+.add-tocart:hover{
+    cursor: pointer;
+    border: 1px solid hsl(14, 86%, 42%); /* Light gray border */
+}
 .icon{
     position: relative;
-    top: 4px;
     height: 20px;
     width: 20px;
 }
+
+.cart{
+    margin:0px 16px 0px 16px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    flex: 1;
+    height:fit-content;
+}
+.cartHead{
+    color: hsl(14, 86%, 42%);
+    opacity: 0.9;
+    font-family: 'RedHatBold';
+    margin-bottom: 12px;
+}
+.cardEmpty{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    img{
+        height: 160px;
+        width: 160px;  
+    }
+    .cardEmptyText{
+        padding-bottom: 10px;
+        color:hsl(12, 20%, 44%);
+        font-weight: 700;
+    }
+
+}
+.detailCart{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.detailMenu{
+    display: flex;
+    gap: 2px;
+    flex-direction: column;
+}
+.removeIcon{
+    display: flex;
+    border: 2px solid hsl(14, 25%, 72%); /* Light gray border */
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    padding: 2px;
+}
+.removeIcon:hover{
+    cursor: pointer;
+    border: 2px solid hsl(14, 65%, 9%); /* Light gray border */
+    svg path{
+        fill : hsl(14, 65%, 9%);
+    }
+}
+.menuStandard{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.priceAmount{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+.totalAmount{
+    font-family: 'RedHatAlmostBold';
+    color: hsl(12, 20%, 44%,0.9);
+}
+.line{
+    opacity: 0.2;
+    height: 1px;
+    background-color: hsl(12, 20%, 44%);
+    margin-bottom: 12px;
+}
+.totalSumOrder{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+.orderTotal{
+    color: hsl(14, 65%, 9%,0.8);
+    
+}
+.cartSummation{
+    display: none;
+    flex-direction: column;
+}
+.SumOrder{
+    font-family: 'RedHatBold';
+    color: hsl(14, 65%, 9%);
+    font-size: 24px;
+    opacity: 0.8;
+}
+.cartFooter{
+    display: flex;
+    background-color: hsl(20, 50%, 98%);
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin-bottom: 12px;
+    img{
+        height: 20px;
+        width: 20px;
+        position: relative;
+        top: -2px;
+    }
+    span{
+        font-family: 'RedHatAlmostBold';
+    }
+}
+.confirmOrder{
+    text-align: center;
+    color: hsl(20, 50%, 98%);
+    background-color: hsl(14, 86%, 42%,0.9);
+    border-radius: 24px;
+    padding: 10px;
+}
+.confirmOrder:hover{
+    cursor: pointer;
+    text-align: center;
+    background-color: hsl(14, 86%, 42%);
+    border-radius: 24px;
+    padding: 10px;
+    font-size: 16px;
+}
+.SubmitOrderContainer{
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    height: 100vh;
+}
+.OrderCard{
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFF;
+    border-radius: 10px;
+    padding: 10px;
+    height: auto;
+
+}
+.test{
+    margin: 20px;
+}
+.OrderConfirmLabel{
+    font-family: 'RedHatBold';
+    color: hsl(14, 65%, 9%,0.9);
+}
+.thankOrder{
+    font-family: 'RedHatRegular';
+    color: hsl(7, 20%, 60%);
+
+}
+.menuWrapper{
+    display: flex;
+    flex-direction: column;
+    background-color: hsl(13, 31%, 94%);
+    padding: 20px;
+    margin: 20px 0px 20px 0px;
+    border-radius: 10px;
+
+}
+.MenuSelectedOrder{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.OrderFront{
+    display: flex;
+    align-items:center;
+}
+.OverallDetailOrder{
+    display: flex;
+    flex-direction: column;
+    padding-left: 14px;
+}
+.OverallPrizeOrder{
+    margin-top: 4px;
+    display: flex;
+    gap: 14px;
+}
+.TotalPrizeOrder{
+    font-family: 'RedHatAlmostBold';
+    color: hsl(14, 65%, 9%,0.9);
+    font-size: 16px;
+}
+.OrderTotalLabel{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.SubmitOrder{
+
+    display: flex;
+    justify-content: center;
+    color: hsl(20, 50%, 98%);
+    background-color: hsl(14, 86%, 42%,0.9);
+    border-radius: 24px;
+    padding: 14px;
+    font-size: 14px;
+}
+.SubmitOrder:hover{
+    cursor: pointer;
+    background-color: hsl(14, 86%, 42%);
+}
+
+
+
