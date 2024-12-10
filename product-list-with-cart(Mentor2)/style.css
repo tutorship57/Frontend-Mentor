@@ -78,9 +78,9 @@ body{
 .menu {
     display: flex;
     flex-direction: column;
-
+    margin-right: 10px;
 }
-img {
+img{
     width: 100%; /* Ensures the image fits the grid column width */
     object-fit: cover;
     border-radius: 10px;
@@ -282,21 +282,27 @@ justify-content: center;
     font-size: 16px;
 }
 .SubmitOrderContainer{
-    background-color: aqua;
-    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: hsla(0, 0%, 0%, 0.1);
+    display: none;
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
 }
 .OrderCard{
-    flex: 0.5;
+    flex: 0.4;
     display: flex;
     flex-direction: column;
     background-color: #FFF;
     border-radius: 10px;
     padding: 10px;
     height: auto;
+    max-height: 600px;
 
 }
 .test{
@@ -312,13 +318,14 @@ justify-content: center;
 
 }
 .menuWrapper{
+    max-height: 300px;
     display: flex;
     flex-direction: column;
-    background-color: hsl(13, 31%, 94%);
+    background-color: hsl(20, 50%, 98%);
     padding: 20px;
     margin: 20px 0px 20px 0px;
     border-radius: 10px;
-
+    overflow: auto;
 }
 .MenuSelectedOrder{
     display: flex;
@@ -329,6 +336,10 @@ justify-content: center;
 .OrderFront{
     display: flex;
     align-items:center;
+}
+img.OrderImageThumbNail{
+    width: 40px;
+    border-radius: 0px;
 }
 .OverallDetailOrder{
     display: flex;
@@ -349,10 +360,9 @@ justify-content: center;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 5px 0px 5px 0px;
 }
-
 .SubmitOrder{
-
     display: flex;
     justify-content: center;
     color: hsl(20, 50%, 98%);

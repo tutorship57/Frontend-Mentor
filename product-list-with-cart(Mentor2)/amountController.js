@@ -9,6 +9,7 @@ for (let i = 1; i < menuCartList.length; i++) {
     menu.querySelector('.decreaseIcon').addEventListener('click',(event)=>decreaseQuantity(event.target));
     menu.querySelector('.increaseIcon').addEventListener('click',(event)=>increaseQuantity(event.target));
 }
+
 function decreaseQuantity(button) {
     
     const menuItem  = button.closest('.menu');
